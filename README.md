@@ -1,29 +1,30 @@
 # Simple minikube app
 
-Requires:
+I made this app just to understand Docker and Kuberenetes a bit better.
+
+## Requirements
 - Docker
 - Kubectl
 - Minikube
 - Java
 
-Build a JAR from Program.java.
-2. Use minikube to create a docker image inside of minikube from the JAR file.
-3. Start a container using the image.
-4. Check the logs of the container
-
+## Create image
 Build a JAR-file from Program.java, and use minikube to create a docker image from the JAR-file, so that it is added to the image repository.
-``sh
+
+``` sh
 javac *.java &&
 jar cfe Program.jar Program *.class && 
 minikube image build -t program-image:latest .
-``
+```
 
-Run the image 
-``sh
+## Run it
+Start a container based on the image 
+```sh
 kubectl run program-container --image=program-image --image-pull-policy=Never --restart=Never
-``
+```
 
-When checking the logs, you should see the program running inside minikube and that it has started printing.
-``sh
+## See logs
+To verify your app is run in a container within minikube you can run the following command to see its logs.
+```sh
 kubectl logs program-container
-``
+```
