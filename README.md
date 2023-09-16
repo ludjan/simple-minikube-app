@@ -9,7 +9,7 @@ I made this app just to understand Docker and Kuberenetes a bit better.
 - Java
 
 ## Create image
-Build a JAR-file from Program.java, and use minikube to create a docker image from the JAR-file, so that it is added to the image repository.
+Build a JAR-file from Program.java, and use minikube to create a docker image from the JAR-file, so that it is added to the minikube docker image repository.
 
 ``` sh
 javac *.java &&
